@@ -1,8 +1,7 @@
 <img width="300" src="https://cloud.githubusercontent.com/assets/1907604/7618436/f8c371de-f9a9-11e4-8846-772f67f53513.jpg"/>
 
 # reporting-api-client
-
-[![CircleCI](https://circleci.com/gh/Avocarrot/reporting-api-client.svg?style=shield&circle-token=a289026f1ac89645d7996913c153d00d3a63edb7)](https://circleci.com/gh/Avocarrot/reporting-api-client)
+[![CircleCI](https://circleci.com/gh/Avocarrot/reporting-api-client.svg?style=shield&circle-token=59b4d06e01423e5cc6186c2da344f88fa15d534a)](https://circleci.com/gh/Avocarrot/reporting-api-client)
 [<img src="https://s3.amazonaws.com/avocarrot_various/git-shields/coverage-99%2B.svg"/>](https://circleci.com/api/v1/project/Avocarrot/reporting-api-client/latest/artifacts/0//home/ubuntu/rreporting-api-client/coverage/lcov-report/index.html)
 
 A thin Avocarrot reporting API consumer
