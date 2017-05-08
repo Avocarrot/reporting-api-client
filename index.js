@@ -12,8 +12,8 @@ var Map = require('core-js/library/fn/map');
  * Converts object to consumable array
  *
  * @function _toConsumableArray
- * @param {Array} arr
  * @ignore
+ * @param {Array} arr
  */
 function _toConsumableArray(obj) {
   if (Array.isArray(obj)) {
@@ -31,6 +31,7 @@ exports._toConsumableArray = _toConsumableArray;
  * Extracts result field from response
  *
  * @function _extractResponseResult
+ * @ignore
  * @param {Object} response
  * @return {Object}
  */

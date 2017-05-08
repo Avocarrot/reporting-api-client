@@ -34,7 +34,7 @@
     "test": "find ./tests -name '*.spec.js' | xargs mocha",
     "cov": "find ./tests -name '*.spec.js' | xargs istanbul cover _mocha",
     "cov:thresdhold": "istanbul check-coverage",
-    "docs": "jsdoc lib --configure jsdoc.json --readme README.md --recurse"
+    "docs": "find index.js | xargs jsdoc --configure jsdoc.json --readme README.md --recurse"
   },
   "bugs": {
     "url": "https://github.com/Avocarrot/reporting-api-client/issues"
