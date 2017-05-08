@@ -277,7 +277,7 @@ ReportingAPIClient.prototype.transformTotals = function(response) {
  * @memberof ReportingAPIClient
  * @method getTotals
  * @param {Array} propertiesArray
- * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
+ * @param {Object} properties: The configuration properties to use (timestamp, filters)
  * @return {Promise} getFromEndpoint
  */
 ReportingAPIClient.prototype.getTotals = function(propertiesArray) {
@@ -439,7 +439,7 @@ ReportingAPIClient.prototype.getGroupped = function(properties, caller) {
  * @memberof ReportingAPIClient
  * @method getBreakdown
  * @param {Array} propertiesArray
- * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
+ * @param {Object} properties: The configuration properties to use (timestamp, filters)
  * @return {Promise}
  */
 ReportingAPIClient.prototype.getBreakdown = function(propertiesArray) {
@@ -454,7 +454,7 @@ ReportingAPIClient.prototype.getBreakdown = function(propertiesArray) {
  *
  * @memberof ReportingAPIClient @method getTimeseries
  * @param {Array} propertiesArray
- * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
+ * @param {Object} properties: The configuration properties to use (timestamp, filters)
  * @return {Promise}
  */
 ReportingAPIClient.prototype.getTimeseries = function(propertiesArray) {
@@ -499,9 +499,9 @@ ReportingAPIClient.prototype.transformDimension = function(dimensionName) {
  * @memberof ReportingAPIClient
  * @method getDimension
  * @param {Array} propertiesArray
- * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
- * @param {String} propertiesArray[1] - dimensionName: The Dimension name to use
- * @param {String} propertiesArray[2] - query The query string to process
+ * @param {Object} properties: The configuration properties to use (timestamp, filters)
+ * @param {String} dimensionName: The Dimension name to use
+ * @param {String} query The query string to process
  * @return {Promise} getFromEndpoint
  */
 ReportingAPIClient.prototype.getDimension = function(propertiesArray) {
