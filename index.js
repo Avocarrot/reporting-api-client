@@ -169,7 +169,7 @@ function ReportingAPIClient(options) {
   this.host = options.host;
   this.xhrRequest = options.xhrRequest || xhr;
   this.transformLabelFn = options.transformLabelFn;
-  this.resource = null;
+  this.basePath = null;
   this.access_token = null;
   this.requests = {};
 }
@@ -203,7 +203,7 @@ ReportingAPIClient.prototype.generateLabelFor = function(key, value) {
  * @return {Void}
  */
 ReportingAPIClient.prototype.setCredentials = function(resource, access_token) {
-  this.resource = resource;
+  this.basePath = resource;
   this.access_token = access_token;
 };
 
@@ -225,7 +225,7 @@ ReportingAPIClient.prototype.getFromEndpoint = function(options, transform) {
   this.abort(caller);
   // Send new request
   var _self = this;
-  var url = this.host + '/' + this.resource + '?' + param(query);
+  var url = [this.host, this.basePath, options.resource].join('/') + '?' + param(query);
   return new Promise(function(resolve, reject) {
     _self.requests[caller] = _self.xhrRequest({
       url: url,
@@ -401,7 +401,6 @@ ReportingAPIClient.prototype.getGroupped = function(properties, caller) {
         targetGranularity = properties.granularity;
         prunedGroup.splice(granularityIndex, 1);
       }
-      console.log('combinedFilters', combinedFilters);
       // Send Promise for partial split
       return _self.getFromEndpoint({
         caller: caller,
@@ -515,7 +514,7 @@ ReportingAPIClient.prototype.getDimension = function(propertiesArray) {
   var transformDimension = this.transformDimension.bind(this);
   return this.getFromEndpoint({
     caller: 'dimensions',
-    url: 'dimensions/' + dimensionName,
+    resource: 'dimensions/' + dimensionName,
     query: {
       granularity: properties.granularity,
       timestamp: properties.timestamp,

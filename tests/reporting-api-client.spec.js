@@ -43,7 +43,7 @@ describe('Unit: Utils - ReportingAPIClient', function() {
     var client = new ReportingAPIClient({host: HOST});
     client.setCredentials('/inventory', 123456789);
     expect(client.access_token).to.equal(123456789);
-    expect(client.resource).to.equal('/inventory');
+    expect(client.basePath).to.equal('/inventory');
   });
 
   /**
@@ -51,28 +51,7 @@ describe('Unit: Utils - ReportingAPIClient', function() {
    */
   describe('getFromEndpoint()', function() {
 
-    it('uses default arguments', function(done) {
-      var transformStub = sandbox.stub().returns(function(data) {
-        return data;
-      });
-      // Mock HTTP request
-      var client = new ReportingAPIClient({
-        host: HOST,
-        xhrRequest: function(options, cb) {
-          expect(options.url).to.equal('http://reporting.mock.com/v1/inventory?access_token=');
-          return cb(null, {
-            statusCode: 200
-          }, '{}');
-        }
-      });
-      // Send xhr request
-      client.resource = 'inventory';
-      client.getFromEndpoint({}, transformStub).then(function() {
-        done();
-      });
-    });
-
-    it('sends the correct RSVP Promise', function(done) {
+    it('sends the correct request data', function(done) {
       var transformStub = sandbox.stub().returns(function(data) {return data;});
       var options = {
         caller: 'totals',
@@ -89,7 +68,7 @@ describe('Unit: Utils - ReportingAPIClient', function() {
       var client = new ReportingAPIClient({
         host: HOST,
         xhrRequest: function(options, cb) {
-          expect(options.url).to.equal('http://reporting.mock.com/v1/inventory?granularity=all&filters%5Bapp_id%5D=12345&filters%5Btimestamp%5Bfrom%5D%5D=2016-01-07T00%3A00%3A00.000Z&filters%5Btimestamp%5Bto%5D%5D=2016-01-08T00%3A00%3A00.000Z&access_token=123456789');
+          expect(options.url).to.equal('http://reporting.mock.com/v1/inventory/?granularity=all&filters%5Bapp_id%5D=12345&filters%5Btimestamp%5Bfrom%5D%5D=2016-01-07T00%3A00%3A00.000Z&filters%5Btimestamp%5Bto%5D%5D=2016-01-08T00%3A00%3A00.000Z&access_token=123456789');
           return cb(null, {
             statusCode: 200
           }, '{}');
@@ -530,7 +509,7 @@ describe('Unit: Utils - ReportingAPIClient', function() {
       expect(getFromEndpointSpy.calledOnce).to.be.true;
       expect(getFromEndpointSpy.getCall(0).args[0]).to.eql({
         caller: 'dimensions',
-        url: 'dimensions/app_id',
+        resource: 'dimensions/app_id',
         query: {
           granularity: 'hour',
           timestamp: properties.timestamp,
