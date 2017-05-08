@@ -1,0 +1,42 @@
+{
+  "name": "reporting-api-client",
+  "version": "0.9.0",
+  "description": "Avocarrot reporting API client for ",
+  "author": "Glispa",
+  "license": "MIT",
+  "directories": {
+    "docs": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Avocarrot/reporting-api-client.git"
+  },
+  "dependencies": {
+    "core-js": "^2.4.1",
+    "jquery-param": "^0.2.0",
+    "promise": "^7.1.1",
+    "xhr": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdoc": "^3.4.3",
+    "jshint": "^2.9.4",
+    "mocha": "^3.3.0",
+    "sinon": "^2.2.0"
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "pretest": "jshint index.js tests/**",
+    "test": "find ./tests -name '*.spec.js' | xargs mocha",
+    "cov": "find ./tests -name '*.spec.js' | xargs istanbul cover _mocha",
+    "cov:thresdhold": "istanbul check-coverage",
+    "docs": "jsdoc lib --configure jsdoc.json --readme README.md --recurse"
+  },
+  "bugs": {
+    "url": "https://github.com/Avocarrot/reporting-api-client/issues"
+  }
+}
