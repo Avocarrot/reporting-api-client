@@ -210,7 +210,8 @@ ReportingAPIClient.prototype.setCredentials = function(resource, access_token) {
 /**
  * Retrieves data from a ReportingAPI endpoint
  *
- * @memberof ReportingAPIClient @method getFromEndpoint
+ * @memberof ReportingAPIClient
+ * @method getFromEndpoint
  * @param {Object} options - The configuration options to use
  * @param {Function} transform - The function to use for transformation
  * @return {Promise} promise
@@ -252,7 +253,8 @@ ReportingAPIClient.prototype.getFromEndpoint = function(options, transform) {
 /**
  * Transforms totals response
  *
- * @memberof ReportingAPIClient @method transformTotals
+ * @memberof ReportingAPIClient
+ * @method transformTotals
  * @param {Object} response - The response object to consume
  * @return {Object}
  */
@@ -272,7 +274,8 @@ ReportingAPIClient.prototype.transformTotals = function(response) {
 /**
  * Returns totals from API
  *
- * @memberof ReportingAPIClient @method getTotals
+ * @memberof ReportingAPIClient
+ * @method getTotals
  * @param {Array} propertiesArray
  * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
  * @return {Promise} getFromEndpoint
@@ -293,7 +296,8 @@ ReportingAPIClient.prototype.getTotals = function(propertiesArray) {
 /**
  * Constructs combined filters
  *
- * @memberof ReportingAPIClient @method constructCombinedFilters
+ * @memberof ReportingAPIClient
+ * @method constructCombinedFilters
  * @param {Object} initialFilters - The initial filters to process
  * @param {Array} newFilters - The new filters to set
  * @param {Array} targetDimensions - The dimensions to set
@@ -324,7 +328,8 @@ var constructCombinedFilters = function constructCombinedFilters(initialFilters,
 /**
  * Transforms breakdown response
  *
- * @memberof ReportingAPIClient @method transformGroupped
+ * @memberof ReportingAPIClient
+ * @method transformGroupped
  * @param {Array} groups - The list of groups to use
  * @return {Function}
  */
@@ -351,7 +356,8 @@ ReportingAPIClient.prototype.transformGroupped = function(groups) {
 /**
  * Returns groupped data from Reporting API
  *
- * @memberof ReportingAPIClient @method getGroupped
+ * @memberof ReportingAPIClient
+ * @method getGroupped
  * @param {Object} properties The configuration properties to use (group, filters, granularity)
  * @param {String} caller The caller to assign for the XHR request
  * @return {Promise} getFromEndpoint
@@ -431,7 +437,8 @@ ReportingAPIClient.prototype.getGroupped = function(properties, caller) {
 /**
  * Returns breakdown data from Reporting API
  *
- * @memberof ReportingAPIClient @method getBreakdown
+ * @memberof ReportingAPIClient
+ * @method getBreakdown
  * @param {Array} propertiesArray
  * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
  * @return {Promise}
@@ -468,7 +475,8 @@ ReportingAPIClient.prototype.getTimeseries = function(propertiesArray) {
 /**
  * Transforms dimension response
  *
- * @memberof ReportingAPIClient @method transformDimension
+ * @memberof ReportingAPIClient
+ * @method transformDimension
  * @param {String} dimensionName - The Dimension name to use
  * @return {Array}
  */
@@ -489,7 +497,8 @@ ReportingAPIClient.prototype.transformDimension = function(dimensionName) {
 /**
  * Returns dimension values from Reporting API
  *
- * @memberof ReportingAPIClient @method getDimension
+ * @memberof ReportingAPIClient
+ * @method getDimension
  * @param {Array} propertiesArray
  * @param {Object} propertiesArray[0] - properties: The configuration properties to use (timestamp, filters)
  * @param {String} propertiesArray[1] - dimensionName: The Dimension name to use
@@ -518,7 +527,8 @@ ReportingAPIClient.prototype.getDimension = function(propertiesArray) {
 /**
  * Aborts previous XHR request for caller
  *
- * @memberof ReportingAPIClient @method abort
+ * @memberof ReportingAPIClient
+ * @method abort
  * @param {String} caller - The target caller to tear down
  * @return {Void}
  */
@@ -533,7 +543,8 @@ ReportingAPIClient.prototype.abort = function(caller) {
 /**
  * Aborts and removes all registered XHR requests
  *
- * @memberof ReportingAPIClient @method tearDown
+ * @memberof ReportingAPIClient
+ * @method tearDown
  * @return {Void}
  */
 ReportingAPIClient.prototype.tearDown = function() {
